@@ -28,7 +28,8 @@ const signupLimiter = new RateLimit({
 })
 
 // mongoose.connect(`mongodb://localhost/${process.env.MONGO_DB}`, {useNewUrlParser: true});
-mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(`mongodb://localhost/${process.env.MONGO_DB}`);
 const db = mongoose.connection; 
 db.once('open', () => {
     console.log(`Connected to Mongo on ${db.host}:${db.port}`);
